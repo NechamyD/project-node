@@ -23,8 +23,8 @@ export const ordervalidator=(_order)=>{
          dueDate:Joi.date(),
          orderingId:Joi.string()  ,
          address:Joi.string().min(10).max(30),
-         products:Joi.array[Joi.object({ productName:Joi.string().min(2).max(10).required(),
-         mount:Joi.number().min(1).required()})]
+         products:Joi.array().items(Joi.object({ productName:Joi.string().min(2).max(10).required(),
+            mount:Joi.number().min(1).required()})).min(1)
         
     
            
